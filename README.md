@@ -1,11 +1,12 @@
-# FDR SmartTrack – Regulatory Security Deposit & Maturity Management System
-
 <p align="center">
-  <img src="frontend/public/icons.svg" alt="FDR SmartTrack Logo" width="80" height="80" />
+  <img src="docs/fdr-logo.svg" alt="FDR SmartTrack Logo" width="110" height="110" />
 </p>
 
+<h1 align="center">FDR SmartTrack</h1>
+
 <p align="center">
-  <b>A comprehensive, automated portal for managing, verifying, and tracking Fixed Deposit Receipts (FDRs) and joint security deposits for AICTE and regulatory bodies.</b>
+  <b>Regulatory Fixed Deposit Receipt (FDR) Repository & Automated Verification System</b><br />
+  <i>Engineered for AICTE & Government Educational Regulatory Authorities</i>
 </p>
 
 <p align="center">
@@ -26,51 +27,63 @@
 
 ---
 
-## 📌 Problem Statement & Overview
+## 📑 Table of Contents
 
-Higher education regulatory bodies (such as the **All India Council for Technical Education – AICTE**) require technical and management institutions to submit substantial **Fixed Deposit Receipts (FDRs)** as mandatory joint security deposits/endowments. 
-
-### The Challenges:
-* **Manual Record Keeping**: Paper certificates stored across regional offices are vulnerable to loss, damage, and misplaced tracking.
-* **Maturity Lapses**: Failure to monitor maturity dates leads to unrenewed or dormant deposits without interest recalculation.
-* **Verification Delays & Fraud**: Manual comparison of physical bank FDR certificates against college applications is error-prone and vulnerable to forged documentation.
-* **Opaque Release Workflows**: When institutions apply to release their deposits upon course closure or tenure completion, the clearance process is protracted and lacks auditability.
-
-### The Solution:
-**FDR SmartTrack** is a secure, role-based, cloud-native platform that digitizes the entire lifecycle of regulatory security deposits. Featuring **automated OCR document extraction**, **real-time mismatch detection**, **proactive 30/15/7-day maturity countdowns**, and **immutable audit logging**, FDR SmartTrack ensures complete regulatory compliance and transparency.
+- [📌 Problem Statement & Overview](#-problem-statement--overview)
+- [🌟 Key Features & Innovations](#-key-features--innovations)
+- [🌐 Live Deployment & Demo Credentials](#-live-deployment--demo-credentials)
+- [🏗️ System Architecture](#-system-architecture)
+- [🛠️ Technology Stack](#-technology-stack)
+- [📂 Repository Structure](#-repository-structure)
+- [🚀 Local Development Setup](#-local-development-setup)
+- [📋 Core API Reference](#-core-api-reference)
+- [⚡ Performance & Production Optimizations](#-performance--production-optimizations)
+- [🔒 Security & Compliance](#-security--compliance)
+- [🤝 Contributing & License](#-contributing--license)
 
 ---
 
-## 🌟 Key Features
+## 📌 Problem Statement & Overview
+
+Higher education regulatory authorities, such as the **All India Council for Technical Education (AICTE)**, require technical and professional colleges to deposit substantial **Fixed Deposit Receipts (FDRs)** as mandatory joint security endowments to guarantee financial stability and student welfare.
+
+### The Real-World Challenges
+* **Dispersed Paper Records**: Physical certificates kept across multiple regional bureaus risk being misplaced, damaged, or lost.
+* **Maturity Lapses**: Without automated tracking, deposits mature unnoticed, resulting in lost compound interest and unrenewed security guarantees.
+* **Document Forgery & Manual Auditing**: Comparing declared FDR details against scanned paper receipts manually is slow and susceptible to forged or manipulated documents.
+* **Prolonged Release Procedures**: Returning security deposits upon course cessation or institutional tenure completion requires rigorous verification across multiple offices.
+
+### The Solution: FDR SmartTrack
+**FDR SmartTrack** is an enterprise-grade cloud portal that automates the complete lifecycle of regulatory security deposits. Integrating **automated OCR document extraction**, **algorithmic discrepancy cross-checks**, **30/15/7-day proactive maturity alerts**, and **immutable audit logging**, FDR SmartTrack establishes complete transparency, accuracy, and operational efficiency.
+
+---
+
+## 🌟 Key Features & Innovations
 
 ### 1. 🔍 Automated OCR & AI Discrepancy Detection
-* Institutions upload scanned FDR certificates (PDF or images).
-* The embedded OCR extraction service parses certificate text (FDR Number, Bank Name, Principal Amount, Issue Date, Maturity Date, and Joint Account Holders).
-* Automated verification cross-references declared fields with scanned data, flagging mismatches directly to inspecting officials.
+* Institutions upload certificate scans (PDF or image).
+* The embedded OCR service extracts structured data (Certificate Number, Bank Name, Branch, Principal Amount, Maturity Date, Joint Signatories).
+* The discrepancy engine calculates match confidence scores and visually flags discrepancies directly in the Official Review Queue.
 
 ### 2. 🛡️ Three-Tier Role-Based Access Control (RBAC)
-* **Bureau Administrator**: Global administrative governance, bureau overview metrics, user administration, system-wide configuration, and audit trails.
-* **AICTE Official (SRO / Regional Officer)**: Access to the **Verification Queue**, side-by-side OCR review, approval/rejection with remarks, renewal authorizations, and deposit release requests.
-* **Institution Signatory**: Institute-specific deposit dashboard, digital FDR submissions, document uploads, renewal tracking, and official release petitions.
+* **Bureau Administrator**: Comprehensive oversight, regulatory parameters, bureau analytics, and immutable system audit logs.
+* **AICTE Official (SRO / Regional Officer)**: Verification Queue, side-by-side OCR comparison, approval/rejection with remarks, and deposit release verification.
+* **Institution Signatory**: Institute-specific deposit dashboard, digital FDR submissions, certificate uploads, renewal tracking, and official release petitions.
 
-### 3. ⏰ Proactive Maturity Tracker & Timelines
-* Color-coded countdown meters:
+### 3. ⏰ Proactive Maturity Countdown & Timelines
+* Real-time color-coded countdown indicators:
   * 🔴 **Critical**: Matured / overdue or expiring within 15 days.
   * 🟡 **Upcoming**: Expiring within 16–60 days.
-  * 🟢 **Active / Safe**: Maturity > 60 days.
-* Automated periodic background reminders sent at **30, 15, 7, and 0 days** prior to maturity.
+  * 🟢 **Active**: Securely locked, maturity > 60 days.
+* Automated periodic background reminders triggered at **30, 15, 7, and 0 days** before deposit maturity.
 
 ### 4. 🔄 End-to-End Deposit Lifecycle Management
-* **Deposit Creation**: Multi-currency support, joint FDR holders, branch IFSC, and lock-in periods.
-* **Renewal Management**: Renewal petition submission with revised deposit receipts, terms, and approval workflows.
-* **Safe Release Workflows**: Multi-step verification, clearance checklist, approval sign-off, and digitally verifiable release certificates.
+* **Deposit Registration**: Joint holder validation, IFSC verification, lock-in period enforcement.
+* **Renewal Pipeline**: Streamlined petitioning with revised deposit receipts, terms, and approval workflows.
+* **Secure Release Workflows**: Multi-step verification, clearance checklist, approval sign-off, and digitally verifiable release certificates.
 
 ### 5. 📜 Immutable Audit Trail (ISO 27001 Compliant)
-* Every system action (create, edit, verify, reject, release, login, download) is recorded with timestamp, acting user, IP address, and previous/new state diffs.
-
-### 6. 📊 Real-Time Analytics & Reporting
-* Visual distribution of deposits by bank, institution type, and regional bureau.
-* Exportable compliance registers (PDF / CSV / Excel format).
+* Every system mutation (record creation, status change, certificate upload, verification, release) is timestamped with user ID, role, IP address, and state diff.
 
 ---
 
@@ -80,41 +93,41 @@ Higher education regulatory bodies (such as the **All India Council for Technica
 * **Backend API Base**: [https://fdr-smarttrack-backend.onrender.com/api/v1/](https://fdr-smarttrack-backend.onrender.com/api/v1/)
 * **Django Admin**: [https://fdr-smarttrack-backend.onrender.com/admin/](https://fdr-smarttrack-backend.onrender.com/admin/)
 
-### Pre-Seeded Test Accounts
+### Verified Test Accounts
 
-| Role | Username / Email | Password | What You Can Explore |
+| Role | Username / Email | Password | Access Privileges |
 | :--- | :--- | :--- | :--- |
-| **Bureau Admin** | `admin@aicte.gov.in` | `Admin@123` | Complete overview, global analytics, audit logs, institution management |
-| **AICTE Official (SRO)** | `official@aicte.gov.in` | `Official@123` | Verification queue, side-by-side OCR discrepancy review, approvals |
-| **Institution (Delhi Tech)** | `director@delhitech.edu.in` | `College@123` | College deposit portfolio, new FDR submission, renewal requests |
+| **Bureau Admin** | `admin@aicte.gov.in` | `Admin@123` | Complete administrative authority, all institution records, audit logs |
+| **AICTE Official (SRO)** | `official@aicte.gov.in` | `Official@123` | Official verification queue, discrepancy reviews, approval workflows |
+| **Institution (Delhi Tech)** | `director@delhitech.edu.in` | `College@123` | College deposit portfolio, new FDR submissions, renewal tracking |
 | **Institution (MIT Pune)** | `principal@mitpune.edu.in` | `College@123` | College deposit portfolio, matured deposit alerts, release petition |
 
 ---
 
-## 🏗️ Architecture & Technology Stack
+## 🏗️ System Architecture
 
 ```mermaid
 graph TD
-    subgraph Client["Frontend (React 19 + TypeScript + Vite)"]
-        UI[Tailwind & Modern CSS UI]
+    subgraph Client["Frontend Client (React 19 + TypeScript + Vite)"]
+        UI[Modern Responsive UI]
         AuthCtx[Auth & RBAC Context]
-        RQ[Axios Interceptors & Services]
+        RQ[Axios Service Layer]
     end
 
-    subgraph Hosting["Render Cloud Infrastructure"]
+    subgraph Cloud["Render Cloud Infrastructure"]
         StaticSite[Render Static Site: fdr-smarttrack-frontend]
         WebWSGI[Render Web Service: Gunicorn + WhiteNoise]
     end
 
-    subgraph Backend["Backend (Django REST Framework 5.2)"]
+    subgraph Backend["Backend API (Django REST Framework 5.2)"]
         Router[API Gateway / v1 URLconf]
         JWT[SimpleJWT Authentication]
         Apps[Accounts / FDRs / Verifications / Renewals / Releases / Audit]
         OCR[PyMuPDF / Tesseract OCR Pipeline]
     end
 
-    subgraph Data["Cloud Storage & Database"]
-        Neon[(Neon Serverless PostgreSQL)]
+    subgraph Database["Database & Storage"]
+        Neon[(Neon Serverless PostgreSQL Pooler)]
         Media[Media & Scanned Documents]
     end
 
@@ -127,60 +140,62 @@ graph TD
     Apps --> Media
 ```
 
-### Stack Breakdown
+---
 
-| Layer | Technologies Used |
+## 🛠️ Technology Stack
+
+| Layer | Technologies |
 | :--- | :--- |
 | **Frontend** | React 19, TypeScript, Vite, Tailwind CSS, Lucide React, Recharts, React Router v7 |
 | **Backend** | Python 3.11+, Django 5.2, Django REST Framework, SimpleJWT, WhiteNoise, Gunicorn |
 | **Database** | PostgreSQL (Neon Serverless Pooler with SSL) / SQLite fallback |
 | **Document Processing** | PyMuPDF (`fitz`), Pillow, PyTesseract |
-| **DevOps & Cloud** | Render (Web Service & Static Site), GitHub Actions, Docker-ready |
+| **Cloud Hosting** | Render (Web Service & Static Site), Cloudflare CDN |
 
 ---
 
-## 📂 Project Structure
+## 📂 Repository Structure
 
 ```text
-fdr-project/
+Fdr-project/
 ├── backend/                        # Django REST Framework Backend
-│   ├── apps/
+│   ├── apps/                       # Modular business domain apps
 │   │   ├── accounts/               # Custom User model, RBAC roles, JWT auth
-│   │   ├── audit/                  # Immutable audit logs and tracking
+│   │   ├── audit/                  # Immutable audit logs and event tracking
 │   │   ├── documents/              # FDR document uploads & OCR service
 │   │   ├── fdrs/                   # FDR records, deposits, metadata
-│   │   ├── institutions/           # College/University profiles & memberships
-│   │   ├── notifications/          # Automated maturity alerts & email triggers
-│   │   ├── releases/               # Security deposit release requests
+│   │   ├── institutions/           # College profiles & memberships
+│   │   ├── notifications/          # Automated maturity alerts & email queues
+│   │   ├── releases/               # Security deposit release petitions
 │   │   ├── renewals/               # Deposit renewal management
-│   │   ├── reports/                # Analytics and statistical exports
+│   │   ├── reports/                # Compliance analytics & exports
 │   │   └── verifications/          # Discrepancy detector & verification queue
 │   ├── config/                     # Django core settings, WSGI, URLs
-│   ├── build.sh                    # Render/Linux automated build script
-│   ├── Procfile                    # Production WSGI process definition
-│   ├── pyproject.toml / uv.lock    # Python packaging dependencies
-│   └── requirements.txt            # Production Python requirements
+│   ├── build.sh                    # Automated cloud build script
+│   ├── Procfile                    # WSGI process definition
+│   ├── requirements.txt            # Production Python dependencies
+│   └── README.md                   # Dedicated backend documentation
 │
 ├── frontend/                       # React + TypeScript + Vite Frontend
 │   ├── public/                     # Icons, favicon, static assets
 │   ├── src/
-│   │   ├── assets/                 # SVGs and branding graphics
 │   │   ├── components/             # Reusable UI components, Modals, Navbar, Sidebar
 │   │   ├── context/                # Authentication & Live Tour contexts
 │   │   ├── pages/                  # Dashboard, FDRDetail, FDRList, VerificationQueue, etc.
 │   │   ├── services/               # Axios API client & typed backend service calls
 │   │   ├── types/                  # TypeScript interface definitions
 │   │   ├── App.tsx                 # Client-side router configuration
-│   │   └── index.css               # Design system, theme tokens, styling
+│   │   └── index.css               # Design system & styling tokens
 │   ├── package.json                # Frontend dependencies & scripts
-│   ├── tsconfig.json               # TypeScript compiler configuration
 │   ├── vercel.json                 # SPA routing rewrites for Vercel/Netlify
-│   └── vite.config.ts              # Vite bundler configuration & local API proxy
+│   ├── vite.config.ts              # Vite bundler & local API proxy
+│   └── README.md                   # Dedicated frontend documentation
 │
-├── docs/                           # Architectural guides and documentation
+├── docs/                           # Project assets & architectural documentation
+│   └── fdr-logo.svg                # Vector brand logo
 ├── render.yaml                     # Render Infrastructure-as-Code Blueprint
 ├── .gitignore                      # Git ignore rules for Python, Node, secrets
-└── README.md                       # Comprehensive documentation
+└── README.md                       # Master project documentation
 ```
 
 ---
@@ -191,74 +206,56 @@ fdr-project/
 * **Python 3.11+** installed ([python.org](https://www.python.org/))
 * **Node.js 18+** and `npm` installed ([nodejs.org](https://nodejs.org/))
 * **Git** installed ([git-scm.com](https://git-scm.com/))
-* *(Optional)* Tesseract OCR if running full image-based OCR locally.
 
----
-
-### Step 1: Clone the Repository
-
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/AdeepMohamed/Fdr-project.git
 cd Fdr-project
 ```
 
----
-
-### Step 2: Backend Setup
-
+### 2. Backend Setup
 ```bash
 cd backend
 
-# Create and activate Python virtual environment
+# Create virtual environment
 python -m venv .venv
 
-# On Windows (PowerShell):
+# Activate virtual environment
+# Windows (PowerShell):
 .\.venv\Scripts\Activate.ps1
-# On Linux/macOS:
+# Linux / macOS:
 source .venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Create .env file (or copy from .env.example)
-cp .env.example .env
-```
-
-#### Run Migrations & Seed Demo Data:
-```bash
-# Run database migrations
+# Run migrations & seed realistic demo data
 python manage.py migrate
-
-# Seed sample institutions, users, FDRs, and test discrepancies
 python manage.py seed_demo_data
 
-# Start Django development server
+# Start backend server
 python manage.py runserver 127.0.0.1:8000
 ```
-> The Django backend will be available at: `http://127.0.0.1:8000/api/v1/`
+> Backend API will be active at: `http://127.0.0.1:8000/api/v1/`
 
----
-
-### Step 3: Frontend Setup
-
-Open a new terminal window in the root directory:
-
+### 3. Frontend Setup
+In a new terminal window:
 ```bash
 cd frontend
 
-# Install npm dependencies
+# Install dependencies
 npm install
 
 # Start Vite development server
 npm run dev
 ```
-
-> The React frontend will start at: **`http://localhost:5173/`**  
-> *Note: Vite automatically proxies all `/api` calls to `http://127.0.0.1:8000`.*
+> Web Application will be live at: **`http://localhost:5173/`**
 
 ---
 
-## 📋 Core API Endpoints
+## 📋 Core API Reference
+
+All API endpoints are prefixed with `/api/v1/`.
 
 | Method | Endpoint | Description | Access Level |
 | :--- | :--- | :--- | :--- |
@@ -278,34 +275,40 @@ npm run dev
 
 ---
 
-## 🔒 Security Best Practices Implemented
+## ⚡ Performance & Production Optimizations
 
-* **Stateless JWT Authentication**: Access tokens expire in 30 minutes; automatic silent refresh cycle.
-* **Role-Based Permissions**: Backend serializers and querysets enforce that institutions can never view or modify deposits belonging to other institutions.
-* **Environment Isolation**: Database credentials, Django secret keys, and storage configurations are managed via environment variables.
-* **CORS Whitelisting**: Strict origin policy preventing unauthorized cross-origin API invocation.
-* **Upload Sanitization**: Uploaded files validated for MIME type, extension, and 10MB file size ceiling.
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-1. **Fork** the repository.
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a **Pull Request**.
+* **WhiteNoise Static File Serving**: Pre-compressed assets with `CompressedManifestStaticFilesStorage` for low-latency delivery.
+* **Serverless Database Pooling**: Optimized PostgreSQL connection management via Neon's connection pooler (`conn_max_age=0`).
+* **Vite Production Bundling**: Treeshaking, ES module chunks, and minified bundles under 200 KB total.
+* **SPA Routing Fallback**: Clean URL rewrites (`/* -> /index.html`) on both Render and Vercel preventing 404 errors on page refresh.
+* **Silent Token Rotation**: Automatic Axios interceptor seamlessly refreshes JWT tokens before expiration.
 
 ---
 
-## 📄 License
+## 🔒 Security & Compliance
 
-Distributed under the **MIT License**. See `LICENSE` for more information.
+* **Strict Role-Based Scoping**: Institution accounts can only query and mutate their own institution's deposits.
+* **Zero Secret Leakage**: Database URLs, secret keys, and credentials isolated from source code via `.env` and Render secrets.
+* **CORS Origin Whitelisting**: Granular control over trusted client origins.
+* **Sanitized File Uploads**: Upload size ceiling of 10MB with MIME-type and extension validation.
+
+---
+
+## 🤝 Contributing & License
+
+Contributions, issues, and feature requests are welcome!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/NewFeature`)
+3. Commit your Changes (`git commit -m 'Add NewFeature'`)
+4. Push to the Branch (`git push origin feature/NewFeature`)
+5. Open a Pull Request
+
+Distributed under the **MIT License**.
 
 ---
 
 <p align="center">
-  <b>Developed for Regulatory Governance & Streamlined Fixed Deposit Operations</b><br />
-  <sub>Maintained by <a href="https://github.com/AdeepMohamed">Adeep Mohamed</a></sub>
+  <b>FDR SmartTrack</b> &bull; Built for Transparent & Automated Regulatory Governance<br />
+  <sub>Developed & Maintained by <a href="https://github.com/AdeepMohamed">Adeep Mohamed</a></sub>
 </p>
