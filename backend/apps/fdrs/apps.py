@@ -1,0 +1,7 @@
+from django.apps import AppConfig
+
+
+class FdrsConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'apps.fdrs'
+    verbose_name = 'FDR Records'
