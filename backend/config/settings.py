@@ -4,8 +4,9 @@ from pathlib import Path
 from datetime import timedelta
 
 import dj_database_url
-from dotenv import load_dotenv
-
+# Load Render secret file if present, otherwise local .env
+if Path('/etc/secrets/.env').exists():
+    load_dotenv('/etc/secrets/.env')
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
