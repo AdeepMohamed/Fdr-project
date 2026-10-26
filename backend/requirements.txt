@@ -1,0 +1,19 @@
+# Core Framework
+django>=5.2.0,<6.0.0
+djangorestframework>=3.15.0
+djangorestframework-simplejwt>=5.4.0
+django-cors-headers>=4.7.0
+django-filter>=25.1.0
+
+# Database & Environment
+dj-database-url>=2.3.0
+psycopg[binary]>=3.2.0
+python-dotenv>=1.0.0
+
+# Document Processing & Images
+pillow>=11.0.0
+pymupdf>=2.0.0
+
+# Production Deployment (WSGI & Static Files)
+gunicorn>=23.0.0
+whitenoise[brotli]>=6.8.0
